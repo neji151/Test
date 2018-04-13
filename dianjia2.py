@@ -8,12 +8,12 @@ io.setup(in1_pin, io.OUT)
 io.setup(in2_pin, io.OUT)
  
 def set(property, value):
-    try:
-        f = open("/sys/class/rpi-pwm/pwm0/" + property, 'w')
-        f.write(value)
-        f.close()	
-    except:
-        print("Error writing to: " + property + " value: " + value)
+    # try:
+    f = open("/sys/class/rpi-pwm/pwm0/" + property, 'w')
+    f.write(value)
+    f.close()	
+    # except:
+    #     print("Error writing to: " + property + " value: " + value)
  
 set("delayed", "0")
 set("mode", "pwm")
